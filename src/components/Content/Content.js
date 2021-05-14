@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
 import Logo from './../Logo/Logo';
 import PromoVideo from './../PromoVideo/PromoVideo';
 import Promo from './../Promo/Promo';
@@ -9,8 +10,9 @@ import Contacts from './../Contacts/Contacts';
 import Map from './../Map/Map';
 import Article from './../Article/Article';
 import Order from './../Order/Order';
+import './Content.scss';
 
-const Content = () => {
+const Content = ({ videoId }) => {
   const [isArticle, setArticle] = useState(false);
   const [isOrder, setOrder] = useState(false);
 
@@ -20,10 +22,11 @@ const Content = () => {
         <Logo />
       </div>
       <div className="content__video">
-        <PromoVideo />
+        <PromoVideo videoId={videoId} />
       </div>
       <h1 className="content__title">
         <span className="content__title--top">Фото на</span>
+        <br />
         <span className="content__title--bottom">праздник</span>
       </h1>
       <p className="content__title-digest">
@@ -65,4 +68,8 @@ const Content = () => {
   );
 };
 
-export default Content;
+const mapStateToProps = (state) => ({
+  videoId: state.data.youTubeVideoId,
+});
+
+export default connect(mapStateToProps)(Content);

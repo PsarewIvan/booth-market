@@ -1,0 +1,99 @@
+.promo-video {
+  position: relative;
+  display: flex;
+  max-width: 343px;
+  min-height: 253px;
+  margin: 0 auto;
+  background-image: url(./img/background.svg);
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    border: 24px solid #ee3d48;
+    border-radius: 50%;
+    height: 74px;
+    width: 74px;
+    box-shadow: 0px 4px 30px rgba(238, 61, 72, 0.5),
+      inset 0px 4px 30px rgba(238, 61, 72, 0.5);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 11px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 328px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 3px solid #ee3d48;
+    border-radius: 8px;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 315px;
+    height: 188px;
+    margin: 17px auto 0;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 34px;
+      height: 34px;
+      background-image: url('data:image/svg+xml,%3Csvg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M24.0833 17L12.75 8.5V25.5L24.0833 17Z" fill="%23EE3D48" stroke="%23EE3D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  &__picture:hover ~ .promo-video__button {
+    opacity: 0.7;
+  }
+
+  &__video {
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+}
