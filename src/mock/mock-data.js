@@ -42,19 +42,28 @@ const rentalTimes = [
   { id: 6, name: 'выставка 3 дня', value: 13 },
 ];
 
-const createMockArray = (mock, number) => {
+const createMockArray = (mock, number, optional = false) => {
   const COST_INCREMENT = 10000;
-  const booths = [];
+  const result = [];
 
   for (let i = 0; i < number; i++) {
-    booths.push({
+    const newObj = {
       ...mock,
       name: `${mock.name} #${i + 1}`,
       cost: mock.cost - 10000 + COST_INCREMENT * (i + 1),
       id: i + 1,
-    });
+    };
+    if (optional) {
+      newObj.options = optional;
+    }
+    result.push(newObj);
   }
-  return booths;
+  return result;
+};
+
+const createBooths = (booth, option, number) => {
+  const options = createMockArray(option, number);
+  return createMockArray(booth, number, options);
 };
 
 const createMockNews = (mock, number) => {
@@ -64,8 +73,7 @@ const createMockNews = (mock, number) => {
   }
 };
 
-const booths = createMockArray(booth, 20);
-const options = createMockArray(option, 20);
+const booths = createBooths(booth, option, 20);
 const news = createMockNews(oneNews, 20);
 
-export { booths, options, rentalTimes, news };
+export { booths, rentalTimes, news };
