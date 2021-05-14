@@ -42,6 +42,8 @@ const rentalTimes = [
   { id: 6, name: 'выставка 3 дня', value: 13 },
 ];
 
+const youTubeVideoId = 'dpw9EHDh2bM';
+
 const createMockArray = (mock, number, optional = false) => {
   const COST_INCREMENT = 10000;
   const result = [];
@@ -76,4 +78,4 @@ const createMockNews = (mock, number) => {
 const booths = createBooths(booth, option, 20);
 const news = createMockNews(oneNews, 20);
 
-export { booths, rentalTimes, news };
+export { booths, rentalTimes, news, youTubeVideoId };
