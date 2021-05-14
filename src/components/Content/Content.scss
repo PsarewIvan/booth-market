@@ -1,0 +1,21 @@
+.content {
+  &__logo {
+    margin-bottom: 30px;
+  }
+
+  &__video {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    max-width: 328px;
+    margin: 0 auto;
+    font-size: 40px;
+    line-height: 53px;
+    color: #ee3d48;
+
+    &--bottom {
+      color: #131313;
+    }
+  }
+}
