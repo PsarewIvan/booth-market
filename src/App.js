@@ -1,10 +1,16 @@
 import Content from './components/Content/Content';
+import Footer from './components/Footer/Footer';
 import './App.scss';
 
 const App = () => {
   return (
     <div className="app">
-      <Content />
+      <div className="app__content">
+        <Content />
+      </div>
+      <div className="app__footer">
+        <Footer />
+      </div>
     </div>
   );
 };

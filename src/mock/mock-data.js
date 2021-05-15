@@ -29,7 +29,7 @@ const oneNews = {
   digest: 'У нас есть широчайший ассортимент фотобудок на все случаи жизни',
   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   category: 'Услуги',
-  date: '20-03-2021',
+  date: '2021-03-20',
   photos: [newsImg1, newsImg2, newsImg3, newsImg4, newsImg5],
 };
 
@@ -38,8 +38,8 @@ const rentalTimes = [
   { id: 2, name: '2 часа', value: 2 },
   { id: 3, name: '3 часа', value: 3 },
   { id: 4, name: '5 часов', value: 5 },
-  { id: 5, name: 'выставка 2 дня', value: 12 },
-  { id: 6, name: 'выставка 3 дня', value: 13 },
+  { id: 5, name: 'выставка 2 дня', value: 48 },
+  { id: 6, name: 'выставка 3 дня', value: 72 },
 ];
 
 const youTubeVideoId = 'dpw9EHDh2bM';
@@ -71,8 +71,9 @@ const createBooths = (booth, option, number) => {
 const createMockNews = (mock, number) => {
   const news = [];
   for (let i = 0; i < number; i++) {
-    news.push(mock);
+    news.push({ ...mock, id: i });
   }
+  return news;
 };
 
 const booths = createBooths(booth, option, 20);

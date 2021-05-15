@@ -1,4 +1,13 @@
 .app {
+  display: grid;
+  grid-template-columns: 1fr;
   max-width: 375px;
+  min-height: 100vh;
   margin: 0 auto;
+
+  background-color: white;
+
+  &__content {
+    margin-bottom: 60px;
+  }
 }

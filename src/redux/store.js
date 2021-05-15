@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux';
 import { dataReducer } from './data-reducer';
-// import { orderReducer } from './order-reducer';
+import { orderReducer } from './order-reducer';
 
 const reducers = combineReducers({
   data: dataReducer,
-  // order: orderReducer,
+  order: orderReducer,
 });
 
 const store = createStore(reducers);
