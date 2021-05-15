@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/booth-market/static/css/main.933637a3.chunk.css",
+    "main.js": "/booth-market/static/js/main.b6ab168b.chunk.js",
+    "main.js.map": "/booth-market/static/js/main.b6ab168b.chunk.js.map",
+    "runtime-main.js": "/booth-market/static/js/runtime-main.bcd7d0ec.js",
+    "runtime-main.js.map": "/booth-market/static/js/runtime-main.bcd7d0ec.js.map",
+    "static/css/2.bdcb6676.chunk.css": "/booth-market/static/css/2.bdcb6676.chunk.css",
+    "static/js/2.495d92ee.chunk.js": "/booth-market/static/js/2.495d92ee.chunk.js",
+    "static/js/2.495d92ee.chunk.js.map": "/booth-market/static/js/2.495d92ee.chunk.js.map",
+    "index.html": "/booth-market/index.html",
+    "static/css/2.bdcb6676.chunk.css.map": "/booth-market/static/css/2.bdcb6676.chunk.css.map",
+    "static/css/main.933637a3.chunk.css.map": "/booth-market/static/css/main.933637a3.chunk.css.map",
+    "static/js/2.495d92ee.chunk.js.LICENSE.txt": "/booth-market/static/js/2.495d92ee.chunk.js.LICENSE.txt",
+    "static/media/roboto.css": "/booth-market/static/media/Robotobold.23c8ce07.woff2",
+    "static/media/robotoslab.css": "/booth-market/static/media/Robotoslabregular.f1b4b1a2.woff",
+    "static/media/worksans.css": "/booth-market/static/media/Worksanssemibold.d9c4f9aa.woff",
+    "static/media/PromoVideo.scss": "/booth-market/static/media/background.6a90779a.svg",
+    "static/media/logo.7310d6f0.svg": "/booth-market/static/media/logo.7310d6f0.svg",
+    "static/media/map.241cade3.jpg": "/booth-market/static/media/map.241cade3.jpg",
+    "static/media/news1.db4ae588.jpg": "/booth-market/static/media/news1.db4ae588.jpg",
+    "static/media/news2.baf2afbf.jpeg": "/booth-market/static/media/news2.baf2afbf.jpeg",
+    "static/media/news3.14fa16e6.jpeg": "/booth-market/static/media/news3.14fa16e6.jpeg",
+    "static/media/news4.74e8fcd4.jpeg": "/booth-market/static/media/news4.74e8fcd4.jpeg",
+    "static/media/news5.f7b40643.jpg": "/booth-market/static/media/news5.f7b40643.jpg",
+    "static/media/photo1.2245f497.jpg": "/booth-market/static/media/photo1.2245f497.jpg",
+    "static/media/photo2.8465238b.jpeg": "/booth-market/static/media/photo2.8465238b.jpeg",
+    "static/media/photo3.0df924fc.jpeg": "/booth-market/static/media/photo3.0df924fc.jpeg",
+    "static/media/photo4.351303ed.jpeg": "/booth-market/static/media/photo4.351303ed.jpeg",
+    "static/media/photo5.47240c7c.jpeg": "/booth-market/static/media/photo5.47240c7c.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bcd7d0ec.js",
+    "static/css/2.bdcb6676.chunk.css",
+    "static/js/2.495d92ee.chunk.js",
+    "static/css/main.933637a3.chunk.css",
+    "static/js/main.b6ab168b.chunk.js"
+  ]
+}
