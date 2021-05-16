@@ -40,6 +40,7 @@ const initialState = {
   name: null,
   size: null,
   boothCost: null,
+  boothCostWithRental: null,
   options: [],
   rentalId: rentalTimes[0].id,
   totalCost: null,
@@ -54,6 +55,7 @@ const orderReducer = (state = initialState, action) => {
         name: booth.name,
         size: booth.size,
         boothCost: booth.cost,
+        boothCostWithRental: booth.cost,
         totalCost: getTotalCost(
           state.options,
           booth.cost,
@@ -66,22 +68,21 @@ const orderReducer = (state = initialState, action) => {
       return {
         ...state,
         options: options,
+        boothCostWithRental: state.boothCost,
         totalCost: getTotalCost(
           options,
-          state.cost,
+          state.boothCost,
           getCurrentItem(state.rentalId, rentalTimes).value
         ),
       };
 
     case CHANGE_RENTAL:
+      const rentalValue = getCurrentItem(action.id, rentalTimes).value;
       return {
         ...state,
         rentalId: action.id,
-        totalCost: getTotalCost(
-          state.options,
-          state.cost,
-          getCurrentItem(action.id, rentalTimes).value
-        ),
+        boothCostWithRental: state.boothCost * rentalValue,
+        totalCost: getTotalCost(state.options, state.boothCost, rentalValue),
       };
 
     default:
@@ -102,7 +103,7 @@ const changeOptions = (optionsId, boothId) => ({
 
 const changeRental = (id) => ({
   type: CHANGE_RENTAL,
-  id
+  id,
 });
 
 export { orderReducer, changeOrder, changeOptions, changeRental };

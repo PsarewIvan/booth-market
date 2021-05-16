@@ -10,7 +10,7 @@ import './Order.scss';
 const Order = ({
   name,
   size,
-  boothCost,
+  boothCostWithRental,
   options,
   totalCost,
   rentalTimes,
@@ -18,7 +18,6 @@ const Order = ({
   rentalId,
   closeOrder,
 }) => {
-  console.log();
   return (
     <section className="order">
       <div className="order__wrapper">
@@ -38,7 +37,7 @@ const Order = ({
               </span>
             </p>
             <p className="order__item-cost">{`${Math.round(
-              boothCost / 100
+              boothCostWithRental / 100
             )} ₽`}</p>
           </div>
           <div className="order__rental">
@@ -46,14 +45,14 @@ const Order = ({
               rentalTimes={rentalTimes}
               inputName="order-rental"
               checkedId={rentalId}
-              onChangeId={changeRental}
+              changeRental={changeRental}
               type="select"
             />
           </div>
-          {!options.length && (
+          {options.length && (
             <ul className="order__options">
               {options.map((item) => (
-                <li className="order__options-item">
+                <li className="order__options-item" key={item.id}>
                   <span className="order__option-name">{item.name}</span>
                   <span className="optionCost">{`${Math.round(
                     item.cost / 100
@@ -82,7 +81,7 @@ const Order = ({
 const mapStateToProps = (state) => ({
   name: state.order.name,
   size: state.order.size,
-  boothCost: state.order.boothCost,
+  boothCostWithRental: state.order.boothCostWithRental,
   options: state.order.options,
   totalCost: state.order.totalCost,
   rentalTimes: state.data.rentalTimes,
