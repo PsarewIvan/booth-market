@@ -18,6 +18,7 @@ const Order = ({
   rentalId,
   closeOrder,
 }) => {
+  console.log();
   return (
     <section className="order">
       <div className="order__wrapper">

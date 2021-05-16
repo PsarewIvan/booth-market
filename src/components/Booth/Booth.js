@@ -19,17 +19,25 @@ const Booth = ({
 }) => {
   const [optionsId, setOptionsId] = useState([]);
   const [rentalId, setRentalId] = useState(rentalTimes[0].value);
+  const [boothCost, setBoothCost] = useState(cost);
+  const [totalCost, setTotalCost] = useState(cost);
 
-  const addOptionsId = (id) => {
+  const addOptions = (id, cost) => {
     setOptionsId([...optionsId, id]);
+    setTotalCost(Number(totalCost) + Number(cost));
   };
 
-  const removeOptionsId = (id) => {
+  const removeOptions = (id, cost) => {
     setOptionsId(optionsId.filter((i) => i !== id));
+    setTotalCost(Number(totalCost) - Number(cost));
   };
 
-  const changeRentalId = (id) => {
+  const changeRental = (id, value) => {
     setRentalId(id);
+    const optionsCost = totalCost - boothCost;
+    const newBoothCost = cost * value;
+    setBoothCost(newBoothCost);
+    setTotalCost(Number(newBoothCost) + Number(optionsCost));
   };
 
   const onButtonClick = () => {
@@ -57,8 +65,8 @@ const Booth = ({
       <div className="booth__options">
         <Options
           options={options}
-          addOptionsId={addOptionsId}
-          removeOptionsId={removeOptionsId}
+          addOptions={addOptions}
+          removeOptions={removeOptions}
           optionsId={optionsId}
         />
       </div>
@@ -67,10 +75,10 @@ const Booth = ({
           rentalTimes={rentalTimes}
           inputName={id}
           checkedId={rentalId}
-          onChangeId={changeRentalId}
+          changeRental={changeRental}
         />
       </div>
-      <p className="booth__cost">{`${Math.round(cost / 100)} ₽`}</p>
+      <p className="booth__cost">{`${Math.round(totalCost / 100)} ₽`}</p>
       <div className="booth__button">
         <Button name="Оставить заявку" onClick={onButtonClick} />
       </div>

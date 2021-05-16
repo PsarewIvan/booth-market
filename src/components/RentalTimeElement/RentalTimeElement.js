@@ -6,10 +6,10 @@ const RentalTimeElement = ({
   inputName,
   id,
   checked,
-  onChangeId,
+  changeRental,
 }) => {
   const handleInputChange = () => {
-    onChangeId(id);
+    changeRental(id, value);
   };
   return (
     <label className="rental-time-element">

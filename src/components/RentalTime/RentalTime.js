@@ -1,6 +1,6 @@
 import RentalTimeElement from './../RentalTimeElement/RentalTimeElement';
 
-const RentalTime = ({ rentalTimes, inputName, checkedId, onChangeId }) => {
+const RentalTime = ({ rentalTimes, inputName, checkedId, changeRental }) => {
   return (
     <div className="rental-time">
       {rentalTimes.map((item) => (
@@ -10,7 +10,7 @@ const RentalTime = ({ rentalTimes, inputName, checkedId, onChangeId }) => {
           name={item.name}
           value={item.value}
           inputName={`rental-${inputName}`}
-          onChangeId={onChangeId}
+          changeRental={changeRental}
           checked={checkedId === item.id}
         />
       ))}

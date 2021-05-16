@@ -4,17 +4,17 @@ const OptionElement = ({
   name,
   photo,
   cost,
-  addOptionsId,
-  removeOptionsId,
+  addOptions,
+  removeOptions,
   optionsId,
   id,
 }) => {
   const handleInputChange = () => {
     const indexId = optionsId.indexOf(id);
     if (indexId === -1) {
-      addOptionsId(id);
+      addOptions(id, cost);
     } else {
-      removeOptionsId(id);
+      removeOptions(id, cost);
     }
   };
   return (

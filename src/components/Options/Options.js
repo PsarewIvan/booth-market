@@ -1,6 +1,6 @@
 import OptionElement from './../OptionElement/OptionElement';
 
-const Options = ({ options, addOptionsId, removeOptionsId, optionsId }) => {
+const Options = ({ options, addOptions, removeOptions, optionsId }) => {
   return (
     <div className="options">
       <h4 className="options__title">Доп. опции</h4>
@@ -12,8 +12,8 @@ const Options = ({ options, addOptionsId, removeOptionsId, optionsId }) => {
             photo={item.photo}
             cost={item.cost}
             id={item.id}
-            addOptionsId={addOptionsId}
-            removeOptionsId={removeOptionsId}
+            addOptions={addOptions}
+            removeOptions={removeOptions}
             optionsId={optionsId}
           />
         ))}
