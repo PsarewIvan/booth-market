@@ -2,9 +2,10 @@ import { booths, rentalTimes, news, youTubeVideoId } from './../mock/mock-data';
 const clonedeep = require('lodash.clonedeep');
 
 const SHOWING_NEWS_NUMBER = 3;
-const ASCENDING_METHOD = 'ASCENDING_METHOD';
-const DESCENDING_METHOD = 'DESCENDING_METHOD';
-const DEFAULT_SORT = 'DEFAULT_SORT';
+const ASCENDING_METHOD = 'data/ASCENDING_METHOD';
+const DESCENDING_METHOD = 'data/DESCENDING_METHOD';
+const DEFAULT_SORT = 'data/DEFAULT_SORT';
+const ADD_NEWS_TO_RENDER = 'data/ADD_NEWS_TO_RENDER';
 
 const ascendingSort = (a, b) => {
   return a.cost - b.cost;
@@ -25,12 +26,12 @@ const sortingBooths = (arr, method) => {
 };
 
 const addNewsInShow = (latestNews, newNews) => {
-  const prevNewsLength = latestNews.length;
-  const nextNewsLength = newNews.length;
+  const prevNewsLength = latestNews.length; // 3
+  const nextNewsLength = newNews.length; // 20
   const endIndex =
     nextNewsLength - prevNewsLength >= SHOWING_NEWS_NUMBER
       ? prevNewsLength + SHOWING_NEWS_NUMBER
-      : nextNewsLength;
+      : nextNewsLength; // 6
 
   const result = latestNews.concat(newNews.slice(prevNewsLength, endIndex));
   return result;
@@ -45,8 +46,8 @@ const initialState = {
   rentalTimes,
   news,
   youTubeVideoId,
-  renderingNews: initialNews,
-  isAllNews: false,
+  renderNews: initialNews,
+  isAllNews: initialNews.length > SHOWING_NEWS_NUMBER,
 };
 
 const dataReducer = (state = initialState, action) => {
@@ -70,6 +71,14 @@ const dataReducer = (state = initialState, action) => {
         sortedBooths: clonedeep(state.booths),
       };
 
+    case ADD_NEWS_TO_RENDER:
+      const newNewsArray = addNewsInShow(state.renderNews, news);
+      return {
+        ...state,
+        renderNews: newNewsArray,
+        isAllNews: newNewsArray.length === news.length,
+      };
+
     default:
       return state;
   }
@@ -87,9 +96,14 @@ const defaultBoothSort = () => ({
   type: DEFAULT_SORT,
 });
 
+const addNews = () => ({
+  type: ADD_NEWS_TO_RENDER,
+});
+
 export {
   dataReducer,
   ascendingBoothsSort,
   descendingBoothsSort,
   defaultBoothSort,
+  addNews,
 };

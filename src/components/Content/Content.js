@@ -11,6 +11,7 @@ import {
   ascendingBoothsSort,
   descendingBoothsSort,
   defaultBoothSort,
+  addNews,
 } from './../../redux/data-reducer';
 import Logo from './../Logo/Logo';
 import PromoVideo from './../PromoVideo/PromoVideo';
@@ -27,13 +28,14 @@ const Content = ({
   sortedBooths,
   rentalTimes,
   isAllNews,
-  renderingNews,
+  renderNews,
   changeOrder,
   changeOptions,
   changeRental,
   ascendingBoothsSort,
   descendingBoothsSort,
   defaultBoothSort,
+  addNews,
 }) => {
   const [isArticleShowing, setArticleShowing] = useState(false);
   const [isOrderShowing, setOrderShowing] = useState(false);
@@ -50,7 +52,7 @@ const Content = ({
   }, [orderRef, articleRef]);
 
   const showArticle = (id) => {
-    for (let item of renderingNews) {
+    for (let item of renderNews) {
       if (item.id === id) {
         disableBodyScroll(articleElement);
         setCurrentArticle(item);
@@ -117,9 +119,10 @@ const Content = ({
         </div>
         <div className="content__news">
           <News
-            renderingNews={renderingNews}
+            renderNews={renderNews}
             isAllNews={isAllNews}
             showArticle={showArticle}
+            addNews={addNews}
           />
         </div>
       </main>
@@ -139,7 +142,7 @@ const mapStateToProps = (state) => ({
   videoId: state.data.youTubeVideoId,
   sortedBooths: state.data.sortedBooths,
   rentalTimes: state.data.rentalTimes,
-  renderingNews: state.data.renderingNews,
+  renderNews: state.data.renderNews,
   isAllNews: state.data.isAllNews,
 });
 
@@ -150,4 +153,5 @@ export default connect(mapStateToProps, {
   ascendingBoothsSort,
   descendingBoothsSort,
   defaultBoothSort,
+  addNews,
 })(Content);
