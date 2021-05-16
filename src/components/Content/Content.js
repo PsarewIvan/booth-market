@@ -1,17 +1,12 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import {
   changeOrder,
   changeOptions,
   changeRental,
 } from './../../redux/order-reducer';
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock';
-
 import Logo from './../Logo/Logo';
 import PromoVideo from './../PromoVideo/PromoVideo';
 import Promo from './../Promo/Promo';
@@ -35,21 +30,21 @@ const Content = ({
   const [isArticleShowing, setArticleShowing] = useState(false);
   const [isOrderShowing, setOrderShowing] = useState(false);
   const [currentArticle, setCurrentArticle] = useState(null);
+  const [orderElement, setOrderElement] = useState(null);
+  const [articleElement, setArticleElement] = useState(null);
 
-  // const targetRef = React.createRef();
-  // const targetRef = React.createRef();
-  let targetElement = null;
+  const orderRef = useRef(null);
+  const articleRef = useRef(null);
 
   useEffect(() => {
-    targetElement = document.querySelector('#order-name');
-    return function () {
-      clearAllBodyScrollLocks();
-    };
-  });
+    setOrderElement(orderRef.current);
+    setArticleElement(articleRef.current);
+  }, [orderRef, articleRef]);
 
   const showArticle = (id) => {
     for (let item of renderingNews) {
       if (item.id === id) {
+        disableBodyScroll(articleElement);
         setCurrentArticle(item);
         setArticleShowing(true);
         break;
@@ -58,11 +53,12 @@ const Content = ({
   };
 
   const closeArticle = () => {
+    enableBodyScroll(articleElement);
     setArticleShowing(false);
   };
 
   const showOrder = (boothId, optionsId, rentalId) => {
-    disableBodyScroll(targetElement);
+    disableBodyScroll(orderElement);
     changeOrder(boothId);
     changeOptions(optionsId, boothId);
     changeRental(rentalId);
@@ -70,7 +66,7 @@ const Content = ({
   };
 
   const closeOrder = () => {
-    enableBodyScroll(targetElement);
+    enableBodyScroll(orderElement);
     setOrderShowing(false);
   };
 
@@ -116,10 +112,12 @@ const Content = ({
           />
         </div>
       </main>
-      {isArticleShowing && (
-        <Article article={currentArticle} closeArticle={closeArticle} />
-      )}
-      <div id="order-name">
+      <div ref={articleRef}>
+        {isArticleShowing && (
+          <Article article={currentArticle} closeArticle={closeArticle} />
+        )}
+      </div>
+      <div ref={orderRef}>
         {isOrderShowing && <Order closeOrder={closeOrder} />}
       </div>
     </>
