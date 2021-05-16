@@ -7,6 +7,11 @@ import {
   changeOptions,
   changeRental,
 } from './../../redux/order-reducer';
+import {
+  ascendingBoothsSort,
+  descendingBoothsSort,
+  defaultBoothSort,
+} from './../../redux/data-reducer';
 import Logo from './../Logo/Logo';
 import PromoVideo from './../PromoVideo/PromoVideo';
 import Promo from './../Promo/Promo';
@@ -19,13 +24,16 @@ import './Content.scss';
 
 const Content = ({
   videoId,
-  booths,
+  sortedBooths,
   rentalTimes,
   isAllNews,
   renderingNews,
   changeOrder,
   changeOptions,
   changeRental,
+  ascendingBoothsSort,
+  descendingBoothsSort,
+  defaultBoothSort,
 }) => {
   const [isArticleShowing, setArticleShowing] = useState(false);
   const [isOrderShowing, setOrderShowing] = useState(false);
@@ -96,9 +104,12 @@ const Content = ({
         </div>
         <div className="content__booths">
           <Booths
-            booths={booths}
+            sortedBooths={sortedBooths}
             rentalTimes={rentalTimes}
             showOrder={showOrder}
+            ascendingBoothsSort={ascendingBoothsSort}
+            descendingBoothsSort={descendingBoothsSort}
+            defaultBoothSort={defaultBoothSort}
           />
         </div>
         <div className="content__faq">
@@ -126,7 +137,7 @@ const Content = ({
 
 const mapStateToProps = (state) => ({
   videoId: state.data.youTubeVideoId,
-  booths: state.data.booths,
+  sortedBooths: state.data.sortedBooths,
   rentalTimes: state.data.rentalTimes,
   renderingNews: state.data.renderingNews,
   isAllNews: state.data.isAllNews,
@@ -136,4 +147,7 @@ export default connect(mapStateToProps, {
   changeOrder,
   changeOptions,
   changeRental,
+  ascendingBoothsSort,
+  descendingBoothsSort,
+  defaultBoothSort,
 })(Content);

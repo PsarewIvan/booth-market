@@ -2,16 +2,27 @@ import SortingSelect from './../SortingSelect/SortingSelect';
 import Booth from './../Booth/Booth';
 import './Booths.scss';
 
-const Booths = ({ booths, rentalTimes, showOrder }) => {
+const Booths = ({
+  sortedBooths,
+  rentalTimes,
+  showOrder,
+  descendingBoothsSort,
+  ascendingBoothsSort,
+  defaultBoothSort,
+}) => {
   return (
     <section className="booths">
       <h2 className="booth__title">Фотобудки</h2>
       <div className="booths__sorting">
-        <SortingSelect />
+        <SortingSelect
+          descendingBoothsSort={descendingBoothsSort}
+          ascendingBoothsSort={ascendingBoothsSort}
+          setDefault={defaultBoothSort}
+        />
       </div>
-      {booths.length !== 0 && (
+      {sortedBooths.length !== 0 && (
         <ul className="booths__list">
-          {booths.map((item) => (
+          {sortedBooths.map((item) => (
             <Booth
               key={item.id}
               rentalTimes={rentalTimes}
