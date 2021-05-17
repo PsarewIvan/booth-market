@@ -51,16 +51,25 @@ const Booth = ({
         <BoothSize size={size} />
       </div>
       <div className="booth__slider">
-        <Carousel>
-          {photos.map((item) => (
-            <img
-              className="booth__slider-img"
-              src={item}
-              key={item}
-              alt="some booth"
-            ></img>
-          ))}
-        </Carousel>
+        <div className="booth__slider-wrapper">
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            // infiniteLoop
+            centerMode
+            centerSlidePercentage={86.7}
+            emulateTouch
+          >
+            {photos.map((item) => (
+              <img
+                className="booth__slider-img"
+                src={item}
+                key={item}
+                alt="some booth"
+              ></img>
+            ))}
+          </Carousel>
+        </div>
       </div>
       <div className="booth__options">
         <Options
