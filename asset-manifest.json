@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/booth-market/static/css/main.6ed22ce5.chunk.css",
-    "main.js": "/booth-market/static/js/main.04ca99be.chunk.js",
-    "main.js.map": "/booth-market/static/js/main.04ca99be.chunk.js.map",
+    "main.js": "/booth-market/static/js/main.495466d8.chunk.js",
+    "main.js.map": "/booth-market/static/js/main.495466d8.chunk.js.map",
     "runtime-main.js": "/booth-market/static/js/runtime-main.e6a22615.js",
     "runtime-main.js.map": "/booth-market/static/js/runtime-main.e6a22615.js.map",
     "static/css/2.679831fc.chunk.css": "/booth-market/static/css/2.679831fc.chunk.css",
@@ -50,6 +50,6 @@
     "static/css/2.679831fc.chunk.css",
     "static/js/2.6a72ad7a.chunk.js",
     "static/css/main.6ed22ce5.chunk.css",
-    "static/js/main.04ca99be.chunk.js"
+    "static/js/main.495466d8.chunk.js"
   ]
 }
