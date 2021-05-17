@@ -1,3 +1,5 @@
+import './SortingSelect.scss';
+
 const SortingSelect = ({
   descendingBoothsSort,
   ascendingBoothsSort,
@@ -21,7 +23,7 @@ const SortingSelect = ({
 
   return (
     <div className="sorting-select">
-      <select onChange={handleSelectChange}>
+      <select className="sorting-select__select" onChange={handleSelectChange}>
         <option value={DEFAULT} checked>
           По умолчанию
         </option>

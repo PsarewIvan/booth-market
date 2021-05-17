@@ -1,4 +1,23 @@
 .booths {
+  &__title {
+    margin: 0 16px 19px;
+    font-size: 32px;
+    line-height: 1.3125;
+  }
+
+  &__sorting {
+    display: flex;
+    align-items: baseline;
+    margin: 0 16px 19px;
+  }
+
+  &__sort-text {
+    margin: 0 5px 0 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.33;
+  }
+
   &__list {
     margin: 0;
     padding: 0;

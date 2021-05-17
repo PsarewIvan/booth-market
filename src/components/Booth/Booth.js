@@ -5,8 +5,8 @@ import BoothSize from '../BoothSize/BoothSize';
 import Options from './../Options/Options';
 import RentalTime from './../RentalTime/RentalTime';
 import Button from './../Button/Button';
-import './../../common/styles/Carousel.scss';
 import './Booth.scss';
+import './BoothCarousel.scss';
 
 const Booth = ({
   name,
@@ -56,7 +56,6 @@ const Booth = ({
           <Carousel
             showStatus={false}
             showThumbs={false}
-            // infiniteLoop
             centerMode
             centerSlidePercentage={86.7}
             emulateTouch
@@ -88,9 +87,11 @@ const Booth = ({
           changeRental={changeRental}
         />
       </div>
-      <p className="booth__cost">{`${Math.round(totalCost / 100)} ₽`}</p>
-      <div className="booth__button">
-        <Button name="Оставить заявку" onClick={onButtonClick} />
+      <div className="booth__bottom">
+        <p className="booth__cost">{`${Math.round(totalCost / 100)} ₽`}</p>
+        <div className="booth__button">
+          <Button name="Оставить заявку" onClick={onButtonClick} />
+        </div>
       </div>
     </div>
   );

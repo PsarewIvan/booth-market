@@ -12,7 +12,12 @@ const RentalTimeElement = ({
     changeRental(id, value);
   };
   return (
-    <label className="rental-time-element">
+    <label
+      className={`rental-time-element${
+        checked ? ' rental-time-element--checked' : ''
+      }`}
+      tabIndex="0"
+    >
       {name}
       <input
         className="rental-time-element__input"

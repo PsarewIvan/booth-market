@@ -1,0 +1,47 @@
+.options {
+  &__title {
+    margin: 0;
+    padding: 0 0 7px;
+    width: max-content;
+    min-width: 80px;
+    background-color: #fafafa;
+    border-bottom: 1px solid #ee3d48;
+    font-family: 'Work Sans', 'Arial', sans-serif;
+    font-weight: 600;
+    line-height: 1.17;
+    text-align: center;
+    color: #ee3d48;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-height: 152px;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fafafa;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-image: linear-gradient(
+        to right,
+        transparent,
+        transparent 1px,
+        #ebebeb 1px,
+        #ebebeb 2px,
+        transparent 2px
+      );
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 25px;
+      background-color: #ee3d48;
+      border-radius: 2px;
+    }
+  }
+}

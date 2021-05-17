@@ -1,4 +1,5 @@
 import OptionElement from './../OptionElement/OptionElement';
+import './Options.scss';
 
 const Options = ({ options, addOptions, removeOptions, optionsId }) => {
   return (

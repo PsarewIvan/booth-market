@@ -1,0 +1,24 @@
+.rental-time-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 12px;
+  background-color: #f1f2f2;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &--checked {
+    background-color: #ee3d48;
+    color: #ffffff;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}

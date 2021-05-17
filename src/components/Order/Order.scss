@@ -4,38 +4,164 @@
   bottom: 0;
   right: 0;
   left: 0;
-  overflow: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  z-index: 99;
-  padding: 30px 0;
+  flex-direction: column;
+  z-index: 10;
+  max-width: 375px;
+  margin: 0 auto;
 
   &__wrapper {
-    flex-shrink: 0;
-    flex-grow: 0;
+    position: relative;
     width: 100%;
-    min-height: 100%;
-    margin: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    padding: 16px;
+    background-color: #ffffff;
+    overflow-y: scroll;
   }
 
-  &__window {
-    margin: 50px 0;
-    flex-shrink: 0;
-    flex-grow: 0;
-    background: #fff;
-    width: 600px;
-    max-width: 100%;
-    overflow: visible;
-    transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
-    transform: scale(0.9);
-    // opacity: 0;
+  &__title {
+    margin: 0 0 16px;
+    font-weight: 700;
+    font-size: 2.67rem;
+    line-height: 3.5rem;
+  }
+
+  &__button-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    background-image: url('data:image/svg+xml,%3Csvg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cg opacity="0.48"%3E%3Cpath d="M8.71875 7.28125L7.28125 8.71875L14.5625 16L7.28125 23.2812L8.71875 24.7188L16 17.4375L23.2812 24.7188L24.7188 23.2812L17.4375 16L24.7188 8.71875L23.2812 7.28125L16 14.5625L8.71875 7.28125Z" fill="%236A6A6A"/%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 288px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 8px;
+  }
+
+  &__name {
+    margin-bottom: 2px;
+    font-weight: 600;
+    font-size: 1.17rem;
+    line-height: 1.5rem;
+  }
+
+  &__item-cost {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.17rem;
+    line-height: 1.5rem;
+  }
+
+  &__rental {
+    margin: 0 0 16px;
+  }
+
+  &__options {
+    max-width: 288px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__options-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    font-weight: 600;
+    font-size: 1.17rem;
+    line-height: 1.5rem;
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 74px;
+    margin-bottom: 6px;
+    border-top: 1px solid #ebebeb;
+    font-weight: 600;
+    font-size: 1.67rem;
+    line-height: 1.92rem;
+  }
+
+  &__total-cost {
+    font-family: 'Roboto Slab', 'Arial', sans-serif;
+    font-weight: 500;
+    font-size: 2.67rem;
+    line-height: 3.5rem;
+  }
+
+  &__phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+    margin-bottom: 12px;
+    padding: 0 4px 0 10px;
+    border: 1px solid #ee3d48;
+    border-radius: 6px;
+  }
+
+  &__phone-input {
+    max-width: 156px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.33rem;
+    line-height: 2rem;
+  }
+
+  &__phone-button {
+    position: relative;
+    display: block;
+    padding: 8px 36px 8px 15px;
+    margin: 0;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Work Sans', 'Arial', sans-serif;
+    font-size: 1.17rem;
+    line-height: 1.33rem;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url('data:image/svg+xml,%3Csvg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1.66669 1.02722L7.00002 6.20581L12.3334 1.02722" stroke="%23131313" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E%0A');
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
   }
 }

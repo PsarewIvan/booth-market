@@ -1,0 +1,69 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 0 0 20px;
+    font-weight: 700;
+    font-size: 2.67rem;
+    line-height: 3rem;
+  }
+
+  &__title-digest {
+    order: -1;
+    margin: 0 0 4px;
+    font-weight: 500;
+    font-size: 1.33rem;
+    line-height: 1.58rem;
+    color: #ee3d48;
+  }
+
+  &__element {
+    position: relative;
+    margin: 0 0 0 48px;
+    padding-bottom: 20px;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #d5dae0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -48px;
+      display: block;
+      width: 32px;
+      height: 32px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:nth-of-type(1)::after {
+      background-image: url('data:image/svg+xml,%3Csvg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M26.6973 20.6507C25.8573 20.6307 24.8 20.5813 24.132 20.464C23.4093 20.336 22.54 20.088 21.928 19.8973C21.448 19.748 20.9253 19.88 20.5693 20.2347L17.6133 23.1733C15.5707 22.0973 13.9347 20.844 12.5493 19.4507C11.156 18.0653 9.90267 16.4293 8.82667 14.3867L11.7653 11.4293C12.12 11.0733 12.252 10.5507 12.1027 10.0707C11.9133 9.46 11.664 8.59067 11.5373 7.868C11.4187 7.2 11.3707 6.14267 11.3493 5.30267C11.332 4.576 10.74 4 10.0133 4H5.33333C4.74933 4 4 4.43733 4 5.33333C4 11.3853 6.45333 17.1653 10.6213 21.3787C14.8347 25.5467 20.6147 28 26.6667 28C27.5627 28 28 27.2507 28 26.6667V21.9867C28 21.26 27.424 20.668 26.6973 20.6507L26.6973 20.6507Z" fill="%23EE3D48"/%3E%3C/svg%3E');
+    }
+
+    &:nth-of-type(2)::after {
+      background-image: url('data:image/svg+xml,%3Csvg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M16 2.66663C10.8454 2.66663 6.66669 6.84529 6.66669 12C6.66669 18.6666 16 29.3333 16 29.3333C16 29.3333 25.3334 18.6666 25.3334 12C25.3334 6.84529 21.1547 2.66663 16 2.66663ZM16 15.3333C14.1587 15.3333 12.6667 13.8413 12.6667 12C12.6667 10.1586 14.1587 8.66663 16 8.66663C17.8414 8.66663 19.3334 10.1586 19.3334 12C19.3334 13.8413 17.8414 15.3333 16 15.3333Z" fill="%23EE3D48"/%3E%3C/svg%3E');
+    }
+  }
+
+  &__element-text {
+    margin: 0 0 4px;
+    font-family: 'Roboto Slab', 'Arial', sans-serif;
+    font-size: 1.67rem;
+    line-height: 2.67rem;
+  }
+
+  &__element-description {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: #6a6a6a;
+    text-decoration: none;
+
+    &[href]:hover,
+    &[href]:focus {
+      text-decoration: underline;
+    }
+  }
+}

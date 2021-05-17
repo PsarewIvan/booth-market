@@ -1,0 +1,37 @@
+.faq-item {
+  appearance: none;
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    display: block;
+    padding: 10px 40px 10px 8px;
+    // background-color: #ee3d48;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 1.33rem;
+    line-height: 1.58rem;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__text {
+    margin: 14px 0 0;
+    padding: 4px 0 4px 10px;
+    border-left: 1px solid #ee3d48;
+    font-weight: 500;
+    font-size: 1.17rem;
+    line-height: 1.33rem;
+    color: #6a6a6a;
+  }
+
+  &[open] > summary {
+    background-color: #ee3d48;
+    color: #ffffff;
+  }
+}

@@ -1,2 +1,26 @@
 .news {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+
+  &__title {
+    margin: 0 0 20px;
+    font-weight: bold;
+    font-size: 2.67rem;
+    line-height: 3rem;
+  }
+
+  &__title-digest {
+    order: -1;
+    margin: 0 0 2px;
+    font-size: 1.33rem;
+    line-height: 1.58rem;
+    color: #ee3d48;
+  }
+
+  &__list {
+    margin: 0 0 30px;
+    padding: 0;
+    list-style: none;
+  }
 }

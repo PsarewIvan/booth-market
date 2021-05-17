@@ -1,0 +1,31 @@
+.button {
+  display: block;
+  padding: 10px 12px;
+  margin: 0;
+  background-color: #ee3d48;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &--wide {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #ee3d48;
+    background-color: transparent;
+    color: #ee3d48;
+  }
+
+  &--wide-fill {
+    width: 100%;
+  }
+}

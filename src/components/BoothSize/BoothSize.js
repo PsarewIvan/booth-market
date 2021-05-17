@@ -5,8 +5,8 @@ const BoothSize = ({ size }) => {
 
   return (
     <span className="booth-size">
-      <span className="booth__sizes--title">{`Размер: `}</span>
-      <span>{`${w ? `${w}м` : null}
+      <span className="booth-size__title">{`Размер: `}</span>
+      <span className="booth-size__text">{`${w ? `${w}м` : null}
                 ${w && h ? 'x' : null}
                 ${h ? `${h}м` : null}
                 ${h && l ? 'x' : null}

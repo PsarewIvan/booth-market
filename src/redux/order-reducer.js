@@ -6,7 +6,7 @@ const CHANGE_RENTAL = 'CHANGE_RENTAL';
 
 const getCurrentItem = (id, array) => {
   for (let item of array) {
-    if (item.id === id) return item;
+    if (item.id === Number(id)) return item;
   }
 };
 

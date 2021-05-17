@@ -1,5 +1,5 @@
 import NewsItem from './../NewsItem/NewsItem';
-import Button from './../Button/Button';
+import Button, { WIDE_MOD } from './../Button/Button';
 import './News.scss';
 
 const News = ({ isAllNews, renderNews, showArticle, addNews }) => {
@@ -16,7 +16,7 @@ const News = ({ isAllNews, renderNews, showArticle, addNews }) => {
               name={item.name}
               category={item.category}
               date={item.date}
-              photo={item.photos[0]}
+              photo={item.photos[4]}
               digest={item.digest}
               showArticle={showArticle}
             />
@@ -24,7 +24,12 @@ const News = ({ isAllNews, renderNews, showArticle, addNews }) => {
         </ul>
       )}
       <div className="news__button">
-        <Button name="Показать еще" isActive={!isAllNews} onClick={addNews} />
+        <Button
+          name="Показать еще"
+          isActive={!isAllNews}
+          onClick={addNews}
+          type={WIDE_MOD}
+        />
       </div>
     </section>
   );

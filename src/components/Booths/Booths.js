@@ -12,8 +12,9 @@ const Booths = ({
 }) => {
   return (
     <section className="booths">
-      <h2 className="booth__title">Фотобудки</h2>
+      <h2 className="booths__title">Фотобудки</h2>
       <div className="booths__sorting">
+        <p className="booths__sort-text">Сортировка:</p>
         <SortingSelect
           descendingBoothsSort={descendingBoothsSort}
           ascendingBoothsSort={ascendingBoothsSort}

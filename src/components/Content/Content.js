@@ -45,6 +45,15 @@ const Content = ({
 
   const orderRef = useRef(null);
   const articleRef = useRef(null);
+  const scrollIgnore = (el) => {
+    while (el && el !== document.body) {
+      if (el.dataset.scroll === 'ignore') {
+        return true;
+      }
+
+      el = el.parentElement;
+    }
+  };
 
   useEffect(() => {
     setOrderElement(orderRef.current);
@@ -54,7 +63,9 @@ const Content = ({
   const showArticle = (id) => {
     for (let item of renderNews) {
       if (item.id === id) {
-        disableBodyScroll(articleElement);
+        disableBodyScroll(articleElement, {
+          allowTouchMove: scrollIgnore,
+        });
         setCurrentArticle(item);
         setArticleShowing(true);
         break;
@@ -68,7 +79,9 @@ const Content = ({
   };
 
   const showOrder = (boothId, optionsId, rentalId) => {
-    disableBodyScroll(orderElement);
+    disableBodyScroll(orderElement, {
+      allowTouchMove: scrollIgnore,
+    });
     changeOrder(boothId);
     changeOptions(optionsId, boothId);
     changeRental(rentalId);

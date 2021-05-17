@@ -1,5 +1,63 @@
 .option-element {
+  padding: 8px;
+  border-bottom: 1px solid #ebebeb;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    padding-right: 32px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      box-sizing: border-box;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #ee3d48;
+      border-radius: 2px;
+    }
+
+    &--checked {
+      &::after {
+        border: none;
+        background-color: #ee3d48;
+        background-image: url('data:image/svg+xml,%3Csvg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 6.93846L6.24998 12.0337L14.9999 1.84326" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E%0A');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
   &__img {
-    width: 50px;
+    width: 60px;
+    height: 60px;
+    margin-right: 8px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.17rem;
+    line-height: 1.28;
+  }
+
+  &__name {
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  &__cost {
+    font-family: 'Roboto Slab', 'Arial', sans-serif;
+    font-weight: 500;
+    color: #ee3d48;
   }
 }

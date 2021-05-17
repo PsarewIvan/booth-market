@@ -4,36 +4,80 @@
   bottom: 0;
   right: 0;
   left: 0;
-  overflow: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  z-index: 99;
-  padding: 30px 0;
+  flex-direction: column;
+  z-index: 10;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.48);
 
   &__wrapper {
-    flex-shrink: 0;
-    flex-grow: 0;
     width: 100%;
-    min-height: 100%;
-    margin: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: #ffffff;
   }
 
-  &__window {
-    margin: 50px 0;
-    flex-shrink: 0;
-    flex-grow: 0;
-    background: #fff;
-    width: 600px;
-    max-width: 100%;
-    overflow: visible;
-    // opacity: 0;
+  &__button {
+    position: absolute;
+    z-index: 20;
+    top: 30px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.24);
+    background-image: url('data:image/svg+xml,%3Csvg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cg opacity="0.48"%3E%3Cpath d="M8.71875 7.28125L7.28125 8.71875L14.5625 16L7.28125 23.2812L8.71875 24.7188L16 17.4375L23.2812 24.7188L24.7188 23.2812L17.4375 16L24.7188 8.71875L23.2812 7.28125L16 14.5625L8.71875 7.28125Z" fill="white"/%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  &__slider {
+    margin-bottom: 28px;
+  }
+
+  &__slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__addition {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 12px 12px;
+  }
+
+  &__category {
+    margin: 0;
+    font-size: 1.167rem;
+    line-height: 1.33rem;
+    color: #ee3d48;
+  }
+
+  &__time {
+    color: #6a6a6a;
+  }
+
+  &__text-wrapper {
+    overflow: scroll;
+    margin: 0 12px;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-size: 2rem;
+    line-height: 2.33rem;
+  }
+
+  &__text {
+    height: 92px;
+    margin: 0 12px 12px;
+    font-size: 1.33rem;
+    line-height: 1.3;
   }
 }
