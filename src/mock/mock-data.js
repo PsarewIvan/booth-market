@@ -1,14 +1,14 @@
-import bothImg1 from './img/booths/photo1.jpg';
+import bothImg1 from './img/booths/photo1.jpeg';
 import bothImg2 from './img/booths/photo2.jpeg';
 import bothImg3 from './img/booths/photo3.jpeg';
 import bothImg4 from './img/booths/photo4.jpeg';
 import bothImg5 from './img/booths/photo5.jpeg';
 
-import newsImg1 from './img/news/news1.jpg';
+import newsImg1 from './img/news/news1.jpeg';
 import newsImg2 from './img/news/news2.jpeg';
 import newsImg3 from './img/news/news3.jpeg';
 import newsImg4 from './img/news/news4.jpeg';
-import newsImg5 from './img/news/news5.jpg';
+import newsImg5 from './img/news/news5.jpeg';
 
 const booth = {
   name: 'Фотобудка с ширмой',
