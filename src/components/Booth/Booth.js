@@ -5,6 +5,7 @@ import BoothSize from '../BoothSize/BoothSize';
 import Options from './../Options/Options';
 import RentalTime from './../RentalTime/RentalTime';
 import Button from './../Button/Button';
+import './../../common/styles/Carousel.scss';
 import './Booth.scss';
 
 const Booth = ({
