@@ -1,4 +1,4 @@
-import { prettyDate } from './../../common/prettyDate';
+import { prettyDate } from '../../common/js/prettyDate';
 import './NewsItem.scss';
 
 const NewsItem = ({ name, category, date, photo, digest, showArticle, id }) => {

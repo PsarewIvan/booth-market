@@ -1,6 +1,6 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import { prettyDate } from './../../common/prettyDate';
+import { prettyDate } from '../../common/js/prettyDate';
 import './Article.scss';
 
 const Article = ({ article, closeArticle }) => {
