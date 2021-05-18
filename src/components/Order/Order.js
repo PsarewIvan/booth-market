@@ -53,7 +53,7 @@ const Order = ({
             type="select"
           />
         </div>
-        {options.length && (
+        {options.length !== 0 ? (
           <ul className="order__options">
             {options.map((item) => (
               <li className="order__options-item" key={item.id}>
@@ -64,7 +64,7 @@ const Order = ({
               </li>
             ))}
           </ul>
-        )}
+        ) : null}
         <div className="order__total">
           <span className="order__total-text">Итого:</span>
           <span className="order__total-cost">{`${Math.round(
