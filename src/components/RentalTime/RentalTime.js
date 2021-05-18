@@ -15,7 +15,7 @@ const RentalTime = ({
   return (
     <>
       {type === 'select' ? (
-        <div className="rental-time">
+        <div className="rental-time rental-time--select">
           <select
             className="rental-time__select"
             onChange={handleSelectChange}
