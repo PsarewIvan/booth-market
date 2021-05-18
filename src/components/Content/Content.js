@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
@@ -16,12 +16,13 @@ import {
 import Logo from './../Logo/Logo';
 import PromoVideo from './../PromoVideo/PromoVideo';
 import Promo from './../Promo/Promo';
-import Booths from './../Booths/Booths';
 import Faq from './../Faq/Faq';
-import News from './../News/News';
-import Article from './../Article/Article';
-import Order from './../Order/Order';
 import './Content.scss';
+
+const Booths = React.lazy(() => import('./../Booths/Booths'));
+const News = React.lazy(() => import('./../News/News'));
+const Article = React.lazy(() => import('./../Article/Article'));
+const Order = React.lazy(() => import('./../Order/Order'));
 
 const Content = ({
   videoId,
@@ -118,34 +119,44 @@ const Content = ({
           <Promo />
         </div>
         <div className="content__booths">
-          <Booths
-            sortedBooths={sortedBooths}
-            rentalTimes={rentalTimes}
-            showOrder={showOrder}
-            ascendingBoothsSort={ascendingBoothsSort}
-            descendingBoothsSort={descendingBoothsSort}
-            defaultBoothSort={defaultBoothSort}
-          />
+          <Suspense fallback={<div>Загрузка компонента...</div>}>
+            <Booths
+              sortedBooths={sortedBooths}
+              rentalTimes={rentalTimes}
+              showOrder={showOrder}
+              ascendingBoothsSort={ascendingBoothsSort}
+              descendingBoothsSort={descendingBoothsSort}
+              defaultBoothSort={defaultBoothSort}
+            />
+          </Suspense>
         </div>
         <div className="content__faq">
           <Faq />
         </div>
         <div className="content__news">
-          <News
-            renderNews={renderNews}
-            isAllNews={isAllNews}
-            showArticle={showArticle}
-            addNews={addNews}
-          />
+          <Suspense fallback={<div>Загрузка компонента...</div>}>
+            <News
+              renderNews={renderNews}
+              isAllNews={isAllNews}
+              showArticle={showArticle}
+              addNews={addNews}
+            />
+          </Suspense>
         </div>
       </main>
       <div ref={articleRef}>
         {isArticleShowing && (
-          <Article article={currentArticle} closeArticle={closeArticle} />
+          <Suspense fallback={<div>Загрузка компонента...</div>}>
+            <Article article={currentArticle} closeArticle={closeArticle} />
+          </Suspense>
         )}
       </div>
       <div ref={orderRef}>
-        {isOrderShowing && <Order closeOrder={closeOrder} />}
+        {isOrderShowing && (
+          <Suspense fallback={<div>Загрузка компонента...</div>}>
+            <Order closeOrder={closeOrder} />
+          </Suspense>
+        )}
       </div>
     </>
   );
