@@ -26,12 +26,12 @@ const sortingBooths = (arr, method) => {
 };
 
 const addNewsInShow = (latestNews, newNews) => {
-  const prevNewsLength = latestNews.length; // 3
-  const nextNewsLength = newNews.length; // 20
+  const prevNewsLength = latestNews.length;
+  const nextNewsLength = newNews.length;
   const endIndex =
     nextNewsLength - prevNewsLength >= SHOWING_NEWS_NUMBER
       ? prevNewsLength + SHOWING_NEWS_NUMBER
-      : nextNewsLength; // 6
+      : nextNewsLength;
 
   const result = latestNews.concat(newNews.slice(prevNewsLength, endIndex));
   return result;
